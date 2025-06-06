@@ -10,22 +10,23 @@
 
     <style>
         #carouselExample {
-            max-width: 900px;
-            /* limits how wide it can get */
+            max-width: 1200px;
             margin: 0 auto;
-            /* centers it horizontally */
         }
 
         #carouselExample img {
             width: 100%;
             height: auto;
-            /* keeps original aspect ratio */
             max-height: 400px;
-            /* optional: limits vertical size */
             object-fit: contain;
-            /* ensures the full image is visible */
-            background-color: #f8f9fa;
-            /* light background around smaller images */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgb(0, 81, 255);
+            border-radius: 20px;
+            width: 2.5rem;
+            height: 2.5rem;
         }
     </style>
 
@@ -86,22 +87,8 @@
     </nav>
 
     <main id="main-content" class="container">
-        <!-- HERO (Jumbotron-like) -->
-        <section class="bg-light p-5 rounded-3 mb-5" aria-labelledby="hero-heading">
-            <div class="container">
-                <h1 id="hero-heading" class="display-5 fw-bold">Bloom & Deliver — Fresh bouquets, delivered fast</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                </p>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit
-                    amet
-                    fermentum.</p>
-                <a href="#catalog" class="btn btn-primary btn-lg" role="button" aria-label="Shop Bouquets">Shop
-                    Bouquets</a>
-            </div>
-        </section>
 
-        <!-- HERO CAROUSEL (Bootstrap 5) -->
-        <div id="carouselExample" class="carousel slide  " style="max-height: 500px;">
+        <div id="carouselExample" class="carousel slide mt-5" style="max-height: 500px;">
             <div class="carousel-inner">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -119,102 +106,105 @@
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                <span class="visually-hidden ">Next</span>
             </button>
         </div>
 
-        <!-- CARD GRID: responsive 1/2/4 layuuout -->
-        <section aria-label="Product grid">
-            <h2 class="mb-4">Popular bouquets</h2>
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <article class="card h-100">
-                        <header class="card-header">Bouquet: Mixed Roses — 12 stems</header>
-                        <div class="card-body">
-                            <p class="card-text">A classic mixed roses bouquet with premium red, pink and cream
-                                stems—perfect for
-                                anniversaries.</p>
-                            <ul>
-                                <li>Roses (red, pink, cream)</li>
-                                <li>Baby's breath</li>
-                                <li>Seasonal foliage</li>
-                            </ul>
-                            <a href="#order1" class="btn btn-primary mt-2"
-                                aria-label="Order Mixed Roses 12 stems">Order</a>
+        <div class="container my-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Featured
                         </div>
-                        <footer class="card-footer text-muted">$49.99 — In stock · delivery 24h</footer>
-                    </article>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            2 days ago
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <article class="card h-100">
-                        <header class="card-header">Bouquet: Spring Mix — Bright</header>
-                        <div class="card-body">
-                            <p class="card-text">A cheerful arrangement of tulips, daisies and ranunculus for a burst of
-                                color.</p>
-                            <ul>
-                                <li>Tulips</li>
-                                <li>Daisies</li>
-                                <li>Ranunculus</li>
-                            </ul>
-                            <a href="#order2" class="btn btn-primary mt-2"
-                                aria-label="Order Spring Mix bouquet">Order</a>
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Featured
                         </div>
-                        <footer class="card-footer text-muted">$39.50 — Limited stock · delivery 24-48h</footer>
-                    </article>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            2 days ago
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <article class="card h-100">
-                        <header class="card-header">Bouquet: Lilies Deluxe — White</header>
-                        <div class="card-body">
-                            <p class="card-text">Elegant white lilies wrapped in kraft — a tasteful choice for formal
-                                occasions.</p>
-                            <ul>
-                                <li>White lilies</li>
-                                <li>Greenery</li>
-                                <li>Kraft wrapping</li>
-                            </ul>
-                            <a href="#order3" class="btn btn-primary mt-2"
-                                aria-label="Order Lilies Deluxe bouquet">Order</a>
+                <div class="col">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Featured
                         </div>
-                        <footer class="card-footer text-muted">$59.00 — In stock · delivery 24h</footer>
-                    </article>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+                            </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            2 days ago
+                        </div>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        2 days ago
+                    </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <article class="card h-100">
-                        <header class="card-header">Bouquet: Wildflower Box — Rustic</header>
-                        <div class="card-body">
-                            <p class="card-text">Hand-picked wildflowers arranged in a presentation box for a rustic
-                                touch.</p>
-                            <ul>
-                                <li>Wildflowers mix</li>
-                                <li>Seasonal greens</li>
-                                <li>Gift box packaging</li>
-                            </ul>
-                            <a href="#order4" class="btn btn-primary mt-2" aria-label="Order Wildflower Box">Order</a>
-                        </div>
-                        <footer class="card-footer text-muted">$44.25 — In stock · delivery 24-48h</footer>
-                    </article>
-                </div>
+            </div>
+        </div>
+
+        <section class="bg-light p-5">
+            <div class="container py-5">
+                <h1>Lorem Ipsum</h1>
+                <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin a
+                    leo ac tempor. Sed egestas eros nisi, varius dapibus elit bibendum eu. Proin hendrerit nisl at lacus
+                    iaculis tincidunt a nec lacus. Aliquam erat volutpat. Phasellus condimentum tristique varius.
+                    Suspendisse suscipit, mauris nec scelerisque gravida, elit nisl mattis orci, vel eleifend eros purus
+                    at ipsum. Donec facilisis justo id ipsum ornare maximus. Interdum et malesuada.
+                </p>
             </div>
         </section>
+
     </main>
 
-    <footer class="alert alert-primary text-white mb-0" role="contentinfo">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div>Une petite ligne d'information — livraison de bouquets partout en ville.</div>
-            <div>
-                <a href="#user-rights" class="text-white me-3">Droits des utilisateurs</a>
-                <small>&copy; 2025 Bloom & Deliver</small>
+
+
+    <footer class="alert bg-primary text-white mb-0">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <div class="mb-2 mb-md-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <a href="#user-rights" class="text-white text-decoration-underline">Droits des utilisateurs</a>
             </div>
+            <small class="text-white-50">&copy; 2025Lorem Ipsum — Tous droits réservés</small>
         </div>
     </footer>
 
