@@ -6,68 +6,59 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>TP1 — Accessible Fixed-top Navbar</title>
 
-    <!-- Local Bootstrap CSS: place bootstrap.min.css at css/bootstrap.min.css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
 
 <body>
 
-    <!-- Accessible skip link -->
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg" aria-label="Main navigation"
-        role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
         <div class="container-fluid">
-            <!-- Brand with accessible spinner: spinner is aria-hidden and there's an offscreen label for screen readers -->
-            <a class="navbar-brand d-flex align-items-center" href="/" aria-current="page"
-                aria-label="Bloom & Deliver home">
-                <span class="spinner-border text-warning" role="status" aria-hidden="true"></span>
-                <span class="ms-2">TP1</span>
-                <span class="sr-only">Loading application</span>
-            </a>
-
-            <!-- Toggler for collapsed menu on smaller screens -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <!-- First dropdown: Actions -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownActions" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                            Actions
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                            <li><a class="dropdown-item" href="#action1">Action 1</a></li>
-                            <li><a class="dropdown-item" href="#action2">Action 2</a></li>
-                            <li><a class="dropdown-item" href="#action3">Action 3</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-
-                    <!-- Second dropdown: Settings -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownSettings" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-                            Settings
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownSettings">
-                            <li><a class="dropdown-item" href="#profile">Profile</a></li>
-                            <li><a class="dropdown-item" href="#preferences">Preferences</a></li>
-                            <li><a class="dropdown-item" href="#signout">Sign out</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-
                 </ul>
-
-                <!-- Optional right-side nav items (example) -->
-                <form class="d-flex" role="search" aria-label="Site search">
+                <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -89,75 +80,27 @@
         </section>
 
         <!-- HERO CAROUSEL (Bootstrap 5) -->
-        <section aria-label="Featured bouquets" class="mb-5">
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" role="region"
-                aria-roledescription="carousel" aria-label="Featured bouquets carousel">
-                <!-- Indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
+        <div id="carouselExample" class="carousel slide  " style="max-height: 500px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/b1.jpg" class="d-block w-100" style="height:500px; object-fit:cover;" alt="...">
                 </div>
-
-                <!-- Slides -->
-                <div class="carousel-inner">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <img src="images/placeholder1.svg" class="d-block w-100"
-                            alt="Red roses bouquet arranged in a round display" loading="lazy" />
-                        <div class="carousel-caption d-none d-md-block text-start">
-                            <h2>Roses Bouquet — Romantic 12-stem</h2>
-                            <p>Same-day delivery in the city · Hand-tied, premium red roses</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <img src="images/placeholder2.svg" class="d-block w-100"
-                            alt="Mixed spring bouquet with pastel flowers" loading="lazy" />
-                        <div class="carousel-caption d-none d-md-block text-start">
-                            <h2>Spring Mix — Bright & Cheerful</h2>
-                            <p>Fresh seasonal flowers arranged for a vibrant gift</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <img src="images/placeholder3.svg" class="d-block w-100"
-                            alt="Deluxe white lilies bouquet in kraft wrapping" loading="lazy" />
-                        <div class="carousel-caption d-none d-md-block text-start">
-                            <h2>Lilies Deluxe — Elegant White</h2>
-                            <p>Premium lilies for celebrations and sympathy deliveries</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <img src="images/placeholder4.svg" class="d-block w-100"
-                            alt="Mixed wildflower bouquet in a gift box" loading="lazy" />
-                        <div class="carousel-caption d-none d-md-block text-start">
-                            <h2>Wildflower Box — Rustic Surprise</h2>
-                            <p>Hand-picked wildflowers presented in a gift box</p>
-                        </div>
-                    </div>
+                <div class="carousel-item">
+                    <img src="./images/b2.jpg" class="d-block w-100" style="height:500px; object-fit:cover;" alt="...">
                 </div>
-
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"
-                    aria-label="Previous slide">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"
-                    aria-label="Next slide">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </button>
+                <div class="carousel-item">
+                    <img src="./images/b3.png" class="d-block w-100" style="height:500px; object-fit:cover;" alt="...">
+                </div>
             </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
         <!-- CARD GRID: responsive 1/2/4 layout -->
         <section aria-label="Product grid">
@@ -242,7 +185,6 @@
         </section>
     </main>
 
-    <!-- Footer (alert-styled, matches navbar color) -->
     <footer class="alert alert-primary text-white mb-0" role="contentinfo">
         <div class="container d-flex justify-content-between align-items-center">
             <div>Une petite ligne d'information — livraison de bouquets partout en ville.</div>
@@ -253,21 +195,7 @@
         </div>
     </footer>
 
-    <!-- Local Bootstrap JS bundle (includes Popper) - place at js/bootstrap.bundle.min.js -->
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    <!-- Small JS tweak: ensure dropdowns properly restore focus when closed (improves keyboard UX) -->
-    <script>
-        (function () {
-            // When a dropdown closes, return focus to its toggle for keyboard users.
-            document.querySelectorAll('.nav-item.dropdown').forEach(function (dd) {
-                dd.addEventListener('hidden.bs.dropdown', function (ev) {
-                    var toggle = dd.querySelector('[data-bs-toggle="dropdown"]');
-                    if (toggle && typeof toggle.focus === 'function') toggle.focus();
-                });
-            });
-        })();
-    </script>
 
 </body>
 
